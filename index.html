@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Ahmad | Pro Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- PRO STYLING (CSS) --- */
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --main-color: #38bdf8;
+            --secondary-bg: #1e293b;
+            --accent-color: #a855f7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 7%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--main-color);
+        }
+
+        .navbar a {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-left: 2rem;
+            transition: .3s;
+            font-weight: 500;
+        }
+
+        .navbar a:hover, .navbar a.active {
+            color: var(--main-color);
+        }
+
+        /* Sections Layout */
+        section {
+            min-height: 100vh;
+            padding: 8rem 7% 4rem;
+        }
+
+        /* Hero Section */
+        .home {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .home-content {
+            max-width: 650px;
+        }
+
+        .home-content h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .home-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin: 0.5rem 0;
+        }
+
+        .home-content h3 span {
+            color: var(--main-color);
+        }
+
+        .home-content p {
+            font-size: 1.1rem;
+            margin: 1.5rem 0;
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+
+        .social-media a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            background: transparent;
+            border: 2px solid var(--main-color);
+            border-radius: 50%;
+            font-size: 1.3rem;
+            color: var(--main-color);
+            margin: 0 1rem 1.5rem 0;
+            transition: .5s ease;
+        }
+
+        .social-media a:hover {
+            background: var(--main-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px var(--main-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 2.5rem;
+            background: var(--main-color);
+            border-radius: 4px;
+            color: var(--bg-color);
+            font-weight: 600;
+            transition: .3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 15px var(--main-color);
+            transform: translateY(-2px);
+        }
+
+        .home-img img {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--main-color);
+            box-shadow: 0 0 25px var(--main-color);
+        }
+
+        /* Skills/Expertise Section */
+        .skills {
+            background: var(--secondary-bg);
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+        }
+
+        .heading span {
+            color: var(--main-color);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .skills-card {
+            background: var(--bg-color);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skills-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--main-color), var(--accent-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .skills-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skills-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-card i {
+            font-size: 2rem;
+            color: var(--main-color);
+        }
+
+        .skills-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .skills-card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact form .input-box {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .contact form .input-box input, .contact form textarea {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            color: var(--text-color);
+            background: var(--secondary-bg);
+            border-radius: 6px;
+            margin: 0.7rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: .3s;
+        }
+
+        .contact form .input-box input:focus, .contact form textarea:focus {
+            border-color: var(--main-color);
+        }
+
+        .contact form textarea {
+            resize: none;
+            height: 160px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 2rem 7%;
+            background: var(--secondary-bg);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            section { padding: 8rem 3rem 4rem; }
+            header { padding: 1.5rem 3rem; }
+        }
+
+        @media (max-width: 768px) {
+            .home { flex-direction: column-reverse; text-align: center; gap: 3rem; }
+            .home-content h1 { font-size: 2.5rem; }
+            .social-media a { margin: 0 0.5rem 1.5rem; }
+            .home-img img { width: 260px; height: 260px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">M.<span>Ahmad</span></a>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#skills">My Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Welcome to My Digital Space</h3>
+            <h1>Muhammad Ahmad</h1>
+            <h3>I specialize in <span class="multiple-text"></span></h3>
+            <p>I am deeply passionate about technology, creative layouts, and leveraging advanced digital computing tools. From building high-performance web solutions and custom scripts to engineering elite AI prompt structures, I bring creative concepts to life with technical precision.</p>
+            
+            <div class="social-media">
+                <a href="https://www.youtube.com/@Arhamdadiwala" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <a href="#contact" class="btn">Work With Me</a>
+        </div>
+
+        <div class="home-img">
+            <img src="logo.png" alt="M. Ahmad Logo" id="profile-pic">
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="heading">What I <span>Do Best</span></h2>
+        
+        <div class="skills-container">
+            <div class="skills-card">
+                <div class="icon-box">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>AI & Gemini Power Use</h3>
+                <p>Expertise in advanced prompt engineering, custom workflows, and maximizing large language models like Gemini. I develop efficient automation strategies and optimize complex problem-solving pipelines using modern AI tools.</p>
+            </div>
+
+            <div class="skills-card">
+                <div class="icon-box">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Building lightning-fast, pixel-perfect, and fully responsive frontend interfaces. I specialize in designing modern user-friendly web spaces utilizing structured HTML5, custom CSS3 styles, and interactive JavaScript functionality.</p>
+            </div>
+
+            <div class="skills-card">
+                <div class="icon-box">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>Graphic Designing</h3>
+                <p>Designing custom branding assets, engaging channel media assets, and innovative marketing graphics. I focus on high-impact visual communication that captures audience attention and enhances brand identity.</p>
+            </div>
+
+            <div class="skills-card grid-python">
+                <div class="icon-box">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3>Python Programming</h3>
+                <p>Developing logical data structures, scripting, and backend code optimization. Experienced in writing functional automation tools and managing structured algorithmic logics within various programming environments.</p>
+            </div>
+
+            <div class="skills-card">
+                <div class="icon-box">
+                    <i class="fas fa-vector-square"></i>
+                </div>
+                <h3>Embroidery Designing</h3>
+                <p>Merging traditional craftsmanship with innovative digital sketching. Creating high-quality vector patterns and complex technical layout structures engineered to run flawlessly on professional embroidery machinery.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Get In <span>Touch</span></h2>
+
+        <form id="contact-form">
+            <div class="input-box">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+            </div>
+            <textarea id="message" cols="30" rows="10" placeholder="Your Message or Project Details..." required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-text">
+            <p>Copyright &copy; 2026 by Ahmad | All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    
+    <script>
+        /* --- DYNAMIC JAVASCRIPT --- */
+        
+        // Dynamic Typing Configuration
+        const typed = new Typed('.multiple-text', {
+            strings: ['AI Workflows', 'Web Development', 'Graphic Design', 'Embroidery Planning', 'Python Scripting'],
+            typeSpeed: 80,
+            backSpeed: 50,
+            backDelay: 1200,
+            loop: true
+        });
+
+        // Form Handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Thanks ${name}! Your request has been recorded.`);
+            this.reset();
+        });
+
+        // Scroll Tracking
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('header nav a');
+
+        window.onscroll = () => {
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+
+                if(top >= offset && top < offset + height) {
+                    navLinks.forEach(links => {
+                        links.classList.remove('active');
+                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                    });
+                }
+            });
+        };
+    </script>
+</body>
+</html>
