@@ -380,12 +380,12 @@
     <section class="contact" id="contact">
         <h2 class="heading">Get In <span>Touch</span></h2>
 
-        <form id="contact-form">
+        <form action="https://formspree.io/f/mqejqzpr" method="POST">
             <div class="input-box">
-                <input type="text" id="name" placeholder="Full Name" required>
-                <input type="email" id="email" placeholder="Email Address" required>
+                <input type="text" name="name" id="name" placeholder="Full Name" required>
+                <input type="email" name="email" id="email" placeholder="Email Address" required>
             </div>
-            <textarea id="message" cols="30" rows="10" placeholder="Your Message or Project Details..." required></textarea>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message or Project Details..." required></textarea>
             <button type="submit" class="btn">Send Message</button>
         </form>
     </section>
@@ -408,14 +408,6 @@
             backSpeed: 50,
             backDelay: 1200,
             loop: true
-        });
-
-        // Form Handling
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            alert(`Thanks ${name}! Your request has been recorded.`);
-            this.reset();
         });
 
         // Scroll Tracking
